@@ -60,7 +60,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     if(tree == NULL || tree->root == NULL || key == NULL) return NULL; 
     
     TreeNode *auxiliar = tree->root; 
-    int llaveOri = (int *) key; 
+    int *llaveOri = (int *) key; 
     
     while(auxiliar != NULL){
         int llaveAux = (int *) auxiliar->pair->key;
