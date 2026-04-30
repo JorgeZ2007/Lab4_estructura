@@ -1,0 +1,29 @@
+modules = ["bash", "nix"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Run tests"
+
+[[workflows.workflow]]
+name = "Run tests"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo 'n' | bash test.sh"
+
+[workflows.workflow.metadata]
+outputType = "console"
