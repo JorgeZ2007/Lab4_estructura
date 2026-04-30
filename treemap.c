@@ -69,7 +69,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
             tree->current = auxiliar; 
             return auxiliar->pair;
         }
-        else if(*llaveAux > *llaveOri){
+        else if(*llaveAux < *llaveOri){
             auxiliar = auxiliar->right;
         }
         else{
