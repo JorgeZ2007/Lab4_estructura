@@ -14,3 +14,16 @@ Thu Apr 30 06:03:13 PM UTC 2026:
  tests:  4|7
 total_score: 5/60
 9ef2715
+Thu Apr 30 06:17:25 PM UTC 2026: 
+ treemap.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:63:20: error: initialization of ‘int’ from ‘int *’ makes integer from pointer without a cast [-Wint-conversion]
+   63 |     int llaveOri = (int *) key;
+      |                    ^
+treemap.c:66:24: error: initialization of ‘int’ from ‘int *’ makes integer from pointer without a cast [-Wint-conversion]
+   66 |         int llaveAux = (int *) auxiliar->pair->key;
+      |                        ^
+9018af8
