@@ -63,13 +63,13 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     int *llaveOri = (int *) key; 
     
     while(auxiliar != NULL){
-        int llaveAux = (int *) auxiliar->pair->key;
+        int *llaveAux = (int *) auxiliar->pair->key;
         
-        if(llaveAux == llaveOri){
+        if(*llaveAux == *llaveOri){
             tree->current = auxiliar; 
             return auxiliar->pair;
         }
-        else if(llaveAux > llaveOri){
+        else if(*llaveAux > *llaveOri){
             auxiliar = auxiliar->right;
         }
         else{
