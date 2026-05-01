@@ -240,3 +240,9 @@ treemap.c:177:24: error: invalid type argument of unary ‘*’ (have ‘int’)
   177 |         if(*llaveOri < *llaveAux)
       |                        ^~~~~~~~~
 d23cb79
+Fri May  1 03:33:05 AM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  15|4
+total_score: 25/60
+688ea71

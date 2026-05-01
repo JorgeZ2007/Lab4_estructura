@@ -174,7 +174,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         llaveAux = *(int *) auxiliar->pair->key; 
 
         if(llaveOri == llaveAux) break; 
-        if(*llaveOri < *llaveAux)
+        if(llaveOri < llaveAux)
         {
             auxiliar = auxiliar->left; 
         }
