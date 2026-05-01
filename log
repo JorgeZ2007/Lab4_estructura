@@ -263,3 +263,14 @@ Fri May  1 03:34:29 AM UTC 2026:
  tests:  15|4
 total_score: 25/60
 3631e41
+Fri May  1 03:36:43 AM UTC 2026: 
+ treemap.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:172:31: error: ‘llaveAux’ undeclared (first use in this function)
+  172 |     while(auxiliar != NULL && llaveAux != llaveOri){
+      |                               ^~~~~~~~
+treemap.c:172:31: note: each undeclared identifier is reported only once for each function it appears in
+323746d
