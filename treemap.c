@@ -219,9 +219,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         TreeNode *sucesor = minimum(auxiliar->right); 
         int *llaveSuc = (int *) sucesor->pair->key; 
         void *valorSuc = sucesor->pair->value; 
-        removeNode(tree, sucesor); 
         auxiliar->pair->key = llaveSuc; 
-        auxiliar->pair->value = valorSuc; 
+        auxiliar->pair->value = valorSuc;
+        removeNode(tree, sucesor);  
     }
 
 }
