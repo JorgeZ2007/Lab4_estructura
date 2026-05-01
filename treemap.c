@@ -197,7 +197,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         free(auxiliar); 
     }
-/*
+
     //caso2 un solo hijo
     else if(auxiliar->left == NULL || auxiliar->right == NULL)
     {
@@ -220,7 +220,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }  
         free(auxiliar); 
     }
-*/
+/*
     //caso3 dos hijos
     else
     {
@@ -231,7 +231,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         auxiliar->pair->value = valorSuc;
         removeNode(tree, sucesor);  
     }
-
+*/
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
