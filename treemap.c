@@ -220,18 +220,18 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }  
         free(auxiliar); 
     }
-/*
+
     //caso3 dos hijos
     else
     {
         TreeNode *sucesor = minimum(auxiliar->right); 
         void *llaveSuc = sucesor->pair->key; 
         void *valorSuc = sucesor->pair->value; 
+        removeNode(tree, sucesor);  
         auxiliar->pair->key = llaveSuc; 
         auxiliar->pair->value = valorSuc;
-        removeNode(tree, sucesor);  
     }
-*/
+
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
