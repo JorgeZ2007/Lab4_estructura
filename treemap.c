@@ -162,6 +162,67 @@ TreeNode * minimum(TreeNode * x){
 // Reemplace los datos (key,value) de node con los del nodo "minimum". Elimine el nodo minimum (para hacerlo puede usar la misma función removeNode).
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+     
+    TreeNode *auxiliar = tree->root; 
+    TreeNode *parent = NULL; 
+
+    //buscamos el nodo en el arbol
+    int *llaveOri = (int *) node->pair->key;
+    int *llaveAux = (int *) auxiliar->pair->key; 
+    while(auxiliar != NULL || *llaveAux != *llaveOri){
+        parent = auxiliar; 
+        llaveAux = (int *) auxiliar->pair->key; 
+        
+        if(*llaveOri < *llaveAux)
+        {
+            auxiliar = auxiliar->left; 
+        }
+        else auxiliar = auxiliar->right; 
+    }
+
+    if(auxiliar == NULL) return; //si el nodo no esta en el arbol
+
+    //caso1 sin hijos
+    if(auxiliar->left == NULL || auxiliar->right == NULL)
+    {
+        if(auxiliar != tree->root)
+        {
+            if(parent->left == auxiliar) parent->left = NULL; 
+            else parent->right = NULL; 
+        }
+        else tree->root = NULL; 
+
+        free(auxiliar); 
+    }
+
+    //caso2 un solo hijo
+    else if(auxiliar->left == NULL || auxiliar->right == NULL)
+    {
+        TreeNode *hijo; 
+        
+        if(auxiliar->left != NULL) hijo = auxiliar->left; 
+        else hijo = auxiliar->right; 
+    
+        if(auxiliar != tree->root)
+        {
+            if(parent->left == auxiliar) parent->left = hijo; 
+            else parent->right = hijo; 
+        }
+        else tree->root = hijo; 
+
+        free(auxiliar); 
+    }
+
+    //caso3 dos hijos
+    else
+    {
+        TreeNode *sucesor = minimum(auxiliar->right); 
+        int *llaveSuc = (int *) sucesor->pair->key; 
+        void *valorSuc = sucesor->pair->value; 
+        removeNode(tree, sucesor); 
+        auxiliar->pair->key = llaveSuc; 
+        auxiliar->pair->value = valorSuc; 
+    }
 
 }
 
