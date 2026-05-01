@@ -306,8 +306,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
             auxiliar = auxiliar->right;
         }
         else{
-            auxiliar = auxiliar->left;
-            ubNode = auxiliar; 
+            ubNode = auxiliar;
+            auxiliar = auxiliar->left; 
         }
     }
 
