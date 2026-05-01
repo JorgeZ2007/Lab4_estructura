@@ -261,7 +261,11 @@ Pair * firstTreeMap(TreeMap * tree) {
 Pair * nextTreeMap(TreeMap * tree) {
     if(tree == NULL || tree->current == NULL) return NULL; 
  
-    if(tree->current->right != NULL) return minimum(tree->current->right); 
+    if(tree->current->right != NULL)
+    {
+        TreeNode *NODO = minimum(tree->current->right);
+        return NODO->pair; 
+    }
     else
     {
         TreeNode *auxiliar = tree->current;

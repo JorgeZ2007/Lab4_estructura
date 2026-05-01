@@ -364,3 +364,13 @@ treemap.c:270:24: error: returning ‘TreeNode *’ from a function with incompa
   270 |         return auxiliar->parent;
       |                ~~~~~~~~^~~~~~~~
 3c9e2d9
+Fri May  1 04:14:41 AM UTC 2026: 
+ treemap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:274:24: error: returning ‘TreeNode *’ from a function with incompatible return type ‘Pair *’ [-Wincompatible-pointer-types]
+  274 |         return auxiliar->parent;
+      |                ~~~~~~~~^~~~~~~~
+0511339
