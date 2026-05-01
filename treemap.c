@@ -91,6 +91,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     nuevoNodo->parent = NULL;
     nuevoNodo->left = NULL;
     nuevoNodo->right = NULL;
+    
     Pair *pares = malloc(sizeof(Pair)); 
     pares->key = key; 
     pares->value = value; 
@@ -143,8 +144,14 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 // Si x no tiene hijo izquierdo se retorna el mismo nodo.
 
 TreeNode * minimum(TreeNode * x){
+    if(x->left == NULL) return x; 
 
-    return NULL;
+    while(x->left != NULL){
+        if(x->left != NULL) x = x->left; 
+        else break; 
+    }
+
+    return x;
 }
 
 // 5.- Implemente la función void removeNode(TreeMap * tree, TreeNode* node). 
