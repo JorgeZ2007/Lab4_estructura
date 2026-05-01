@@ -246,3 +246,14 @@ Fri May  1 03:33:05 AM UTC 2026:
  tests:  15|4
 total_score: 25/60
 688ea71
+Fri May  1 03:34:20 AM UTC 2026: 
+ treemap.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:197:25: error: ‘TreeNode’ has no member named ‘reight’; did you mean ‘right’?
+  197 |             tree->root->reight = NULL;
+      |                         ^~~~~~
+      |                         right
+624267b
