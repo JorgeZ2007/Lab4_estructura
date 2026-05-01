@@ -147,8 +147,7 @@ TreeNode * minimum(TreeNode * x){
     if(x->left == NULL) return x; 
 
     while(x->left != NULL){
-        if(x->left != NULL) x = x->left; 
-        else break; 
+        x = x->left;  
     }
 
     return x;
