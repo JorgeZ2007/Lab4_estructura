@@ -292,6 +292,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     if(tree == NULL || tree->root == NULL || key == NULL) return NULL; 
 
     TreeNode *auxiliar = tree->root; 
+    TreeNode *ubNode = NULL;  
     int *llaveOri = (int *) key; 
 
     while(auxiliar != NULL){
@@ -306,7 +307,14 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
         else{
             auxiliar = auxiliar->left;
+            ubNode = auxiliar; 
         }
+    }
+
+    if(ubNode != NULL)
+    {
+        tree->current = ubNode; 
+        return ubNode->pair;
     }
     return NULL;
 }
