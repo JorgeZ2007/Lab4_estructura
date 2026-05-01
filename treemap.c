@@ -99,7 +99,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     TreeNode *auxiliar = tree->root; 
     while(1){
-        int llaveAux = (int *) auxiliar->pair->key;
+        int *llaveAux = (int *) auxiliar->pair->key;
 
         if(*llaveOri < *llaveAux)
         {
