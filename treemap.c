@@ -271,7 +271,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         TreeNode *auxiliar = tree->current;
         while(auxiliar->parent != NULL && auxiliar->parent->right == auxiliar)
             auxiliar = auxiliar->parent; 
-        return auxiliar->parent; 
+        return auxiliar->parent->pair; 
     }
 }
 
