@@ -91,7 +91,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     nuevoNodo->parent = NULL;
     nuevoNodo->left = NULL;
     nuevoNodo->right = NULL;
-    Pair *pares = NULL; 
+    Pair *pares = malloc(sizeof(Pair)); 
     pares->key = key; 
     pares->value = value; 
     nuevoNodo->pair = pares; 
