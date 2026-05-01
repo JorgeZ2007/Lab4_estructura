@@ -167,12 +167,13 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode *parent = NULL; 
 
     //buscamos el nodo en el arbol
-    int *llaveOri = (int *) node->pair->key;
-    int *llaveAux = (int *) auxiliar->pair->key; 
-    while(auxiliar != NULL || *llaveAux != *llaveOri){
+    int llaveOri = *(int *) node->pair->key;
+    int llaveAux = *(int *) auxiliar->pair->key; 
+    while(auxiliar != NULL || llaveAux != llaveOri){
         parent = auxiliar; 
-        llaveAux = (int *) auxiliar->pair->key; 
-        
+        llaveAux = *(int *) auxiliar->pair->key; 
+
+        if(llaveOri == llaveAux) break; 
         if(*llaveOri < *llaveAux)
         {
             auxiliar = auxiliar->left; 
@@ -217,7 +218,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     else
     {
         TreeNode *sucesor = minimum(auxiliar->right); 
-        int *llaveSuc = (int *) sucesor->pair->key; 
+        void *llaveSuc = sucesor->pair->key; 
         void *valorSuc = sucesor->pair->value; 
         auxiliar->pair->key = llaveSuc; 
         auxiliar->pair->value = valorSuc;
