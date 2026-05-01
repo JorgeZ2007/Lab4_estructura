@@ -165,3 +165,12 @@ treemap.c:94:14: error: ‘*nuevoNodo.pair’ may be used uninitialized [-Werror
       |     ~~~~~~~~~^~~~~~
 cc1: all warnings being treated as errors
 d5877fe
+Fri May  1 01:38:29 AM UTC 2026: 
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:94:14: error: ‘*nuevoNodo.pair’ may be used uninitialized [-Werror=maybe-uninitialized]
+   94 |     nuevoNodo->pair->key = key;
+      |     ~~~~~~~~~^~~~~~
+cc1: all warnings being treated as errors
+472ce17
