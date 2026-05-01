@@ -56,3 +56,59 @@ Thu Apr 30 06:19:53 PM UTC 2026:
  tests:  11|6
 total_score: 15/60
 aa64f44
+Fri May  1 01:36:29 AM UTC 2026: 
+ treemap.c | 46 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:88:5: error: unknown type name ‘Tree_Node’; did you mean ‘TreeNode’?
+   88 |     Tree_Node *nuevoNodo = malloc(sizeof(Tree_Node));
+      |     ^~~~~~~~~
+      |     TreeNode
+treemap.c:88:42: error: ‘Tree_Node’ undeclared (first use in this function); did you mean ‘TreeNode’?
+   88 |     Tree_Node *nuevoNodo = malloc(sizeof(Tree_Node));
+      |                                          ^~~~~~~~~
+      |                                          TreeNode
+treemap.c:88:42: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:91:14: error: request for member ‘parent’ in something not a structure or union
+   91 |     nuevoNodo->parent = NULL;
+      |              ^~
+treemap.c:92:14: error: request for member ‘left’ in something not a structure or union
+   92 |     nuevoNodo->left = NULL;
+      |              ^~
+treemap.c:93:14: error: request for member ‘right’ in something not a structure or union
+   93 |     nuevoNodo->right = NULL;
+      |              ^~
+treemap.c:94:14: error: request for member ‘pair’ in something not a structure or union
+   94 |     nuevoNodo->pair->key = key;
+      |              ^~
+treemap.c:95:14: error: request for member ‘pair’ in something not a structure or union
+   95 |     nuevoNodo->pair->value = value;
+      |              ^~
+treemap.c:97:39: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+   97 |     if(tree->root == NULL) tree->root = nuevoNodo;
+      |                                       ^
+treemap.c:100:16: error: ‘auxiliar’ undeclared (first use in this function)
+  100 |     Tree_Node *auxiliar = tree->root;
+      |                ^~~~~~~~
+treemap.c:101:11: error: ‘true’ undeclared (first use in this function)
+  101 |     while(true){
+      |           ^~~~
+treemap.c:7:1: note: ‘true’ is defined in header ‘<stdbool.h>’; this is probably fixable by adding ‘#include <stdbool.h>’
+    6 | #include "treemap.h"
+  +++ |+#include <stdbool.h>
+    7 | 
+treemap.c:104:24: error: invalid type argument of unary ‘*’ (have ‘int’)
+  104 |         if(*llaveOri < *llaveAux)
+      |                        ^~~~~~~~~
+treemap.c:109:31: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+  109 |                 tree->current = nuevoNodo;
+      |                               ^
+treemap.c:115:29: error: invalid type argument of unary ‘*’ (have ‘int’)
+  115 |         else if(*llaveOri > *llaveAux)
+      |                             ^~~~~~~~~
+treemap.c:120:35: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Wincompatible-pointer-types]
+  120 |                     tree->current = nuevoNodo;
+      |                                   ^
+fdd4c6c
