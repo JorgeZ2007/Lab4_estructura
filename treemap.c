@@ -264,16 +264,21 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL)
     {
         TreeNode *NODO = minimum(tree->current->right);
-        tree->current = tree->current->right;
+        tree->current = NODO;
         return NODO->pair; 
     }
     else
     {
         TreeNode *auxiliar = tree->current;
-        while(auxiliar->parent != NULL && auxiliar->parent->right == auxiliar)
-            auxiliar = auxiliar->parent; 
-        tree->current = auxiliar; 
-        return auxiliar->parent->pair; 
+        TreeNode *padre = auxiliar->parent; 
+        
+        while(padre != NULL && auxiliar == padre->right)
+            auxiliar = padre; 
+            padre = padre->parent; 
+        
+        tree->current = padre; 
+        if(padre != NULL) return padre->pair; 
+        else return NULL; 
     }
 }
 
