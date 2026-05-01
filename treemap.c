@@ -91,8 +91,10 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     nuevoNodo->parent = NULL;
     nuevoNodo->left = NULL;
     nuevoNodo->right = NULL;
-    nuevoNodo->pair->key = key; 
-    nuevoNodo->pair->value = value; 
+    Pair *pares = NULL; 
+    pares->key = key; 
+    pares->value = value; 
+    nuevoNodo->pair = pares; 
 
     if(tree->root == NULL) tree->root = nuevoNodo; 
     int *llaveOri = (int *) key;
@@ -125,8 +127,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
         else 
         {
-            auxiliar->pair->key = key;
-            auxiliar->pair->value = value; 
+            auxiliar->pair = pares; 
             free(nuevoNodo); 
             break; 
         }
