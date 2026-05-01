@@ -213,6 +213,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         else tree->root = hijo; 
 
+        if(hijo != NULL) hijo->parent = NULL; 
         free(auxiliar); 
     }
 
