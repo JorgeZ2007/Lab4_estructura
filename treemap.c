@@ -183,7 +183,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     if(auxiliar == NULL) return; //si el nodo no esta en el arbol
 
     //caso1 sin hijos
-    if(auxiliar->left == NULL || auxiliar->right == NULL)
+    if(auxiliar->left == NULL && auxiliar->right == NULL)
     {
         if(auxiliar != tree->root)
         {
